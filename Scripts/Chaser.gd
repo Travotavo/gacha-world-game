@@ -22,11 +22,12 @@ func _physics_process(delta):
 
 
 func _on_HurtBox_area_entered(area):
-	if area.is_in_group("Bullet"):
+	if area.is_in_group("Bullet") and awake:
 		emit_signal("enemy_defeated")
 		queue_free()
 
 
 func _on_WakeBox_area_entered(area):
 	if area.is_in_group("Player"):
+		$MummyEnemy1.modulate = Color.white
 		awake = true

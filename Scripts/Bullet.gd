@@ -16,3 +16,8 @@ func _ready():
 func _process(delta):
 	if not get_node("notifier").is_on_screen():
 		queue_free()
+
+
+func _on_Area2D_area_entered(area):
+	if area.is_in_group("Solid"):
+		queue_free()
