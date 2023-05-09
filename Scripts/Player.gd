@@ -2,6 +2,8 @@ extends KinematicBody2D
 #set camera to center around player
 #fix enemy movement
 
+signal player_died
+
 var movespeed=200
 var bulletspeed=1000
 var bullet=preload("res://Assets/Prefabs/Bullet.tscn")
@@ -37,9 +39,6 @@ func fire():
 	bullet_in.apply_impulse(Vector2(),Vector2(bulletspeed,0).rotated(rotation))
 	get_tree().get_root().call_deferred("add_child",bullet_in)
 
-	
-	
-
-
-func _on_Area2D_body_entered(body):
-	pass
+func _on_hurtbox_area_entered(area):
+	if area.is_in_group("Enemy"):
+		emit_signal("player_died")
