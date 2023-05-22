@@ -12,6 +12,7 @@ var bullet=preload("res://Assets/Prefabs/Bullet.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.set("player", self)
+	
 
 func _physics_process(delta):
 	var motion=Vector2()
