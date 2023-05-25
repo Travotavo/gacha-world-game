@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Desert_Level.mp3-e96fb20dc58b3e64e7fdaecbaaac35aa.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/Desert_Level.mp3"
+dest_files=[ "res://.import/Desert_Level.mp3-e96fb20dc58b3e64e7fdaecbaaac35aa.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
