@@ -32,7 +32,15 @@ position = Vector2( -234, -61 )
 position = Vector2( -189, 56 )
 
 [node name="Enemy6" parent="EnemyBox" instance=ExtResource( 2 )]
-position = Vector2( -184, -212 )
+position = Vector2( -180, -210 )
+
+[node name="Enemy7" parent="EnemyBox" instance=ExtResource( 2 )]
+position = Vector2( -405, 138 )
+awake = true
+
+[node name="Enemy8" parent="EnemyBox" instance=ExtResource( 2 )]
+position = Vector2( 398, 171 )
+awake = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
@@ -49,6 +57,9 @@ motion_mirroring = Vector2( 2016, 0 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 2016, 700 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 1, 0 )
@@ -60,6 +71,9 @@ texture = ExtResource( 6 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 2112, 60 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="player_died" from="Player" to="." method="_on_Player_player_died"]
 [connection signal="enemies_defeated" from="EnemyBox" to="." method="_on_EnemyBox_enemies_defeated"]
