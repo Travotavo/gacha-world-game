@@ -4,9 +4,9 @@
 [ext_resource path="res://Assets/Prefabs/Chase_Mummy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Enemy Manager.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Levels/Level.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Textures/Enviroment/Desert/Desert-Floor.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Textures/Enviroment/Desert/Desert-Wall.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sounds/Songs/Desert-Boss-v2.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Textures/Levels/Desert/Desert-Floor.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Textures/Levels/Desert/Desert-Wall.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sounds/Music/Desert_Level.mp3" type="AudioStream" id=7]
 
 [node name="Room" type="Node2D"]
 script = ExtResource( 4 )
