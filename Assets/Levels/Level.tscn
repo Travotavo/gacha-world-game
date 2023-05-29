@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Prefabs/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Prefabs/Chase_Mummy.tscn" type="PackedScene" id=2]
@@ -7,9 +7,15 @@
 [ext_resource path="res://Assets/Textures/Levels/Desert/Desert-Floor.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Textures/Levels/Desert/Desert-Wall.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sounds/Music/Desert_Level.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Prefabs/FollowCam.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Prefabs/UI.tscn" type="PackedScene" id=9]
 
 [node name="Room" type="Node2D"]
 script = ExtResource( 4 )
+
+[node name="UI" parent="." instance=ExtResource( 9 )]
+
+[node name="Camera2D" parent="." instance=ExtResource( 8 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
@@ -43,6 +49,7 @@ position = Vector2( 398, 171 )
 awake = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 7 )
 volume_db = -5.0
 autoplay = true
@@ -54,12 +61,10 @@ motion_scale = Vector2( 1, 0 )
 motion_mirroring = Vector2( 2016, 0 )
 
 [node name="Desert-Floor" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 497, 50 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 2016, 700 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 1, 0 )

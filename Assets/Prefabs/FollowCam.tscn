@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/CameraScroll.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10.5, 315 )
+
+[node name="Camera2D" type="Camera2D"]
+current = true
+limit_top = -300
+limit_bottom = 300
+script = ExtResource( 1 )
+playerPath = NodePath("../Player")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -522.5, 4 )
+shape = SubResource( 1 )
