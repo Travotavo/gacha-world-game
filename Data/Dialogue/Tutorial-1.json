@@ -1,5 +1,11 @@
 {
 	"script":[
-	"Welcome Explorer! It's about time I had some help exploring these ruins. Get those legs moving, use WASD to move about\n\n[Press enter to continue]"
+	"By jove! How did you find your way in here?!\n\n[Press Space to Continue]",
+	"I’ve spent my entire career trying to find a way into these ruins, so I could excavate its archaeological treasures…",
+	"No matter! If you wish to explore these ruins, you must learn how to defend yourself, my boy!",
+	"By the look of you, it seems you’re lucky enough to have been branded with the ruin’s ancient power, and lucky enough to run into someone who’s spent his life studying this power!",
+	"Use the WASD keys to move yourself around the area.",
+	"Then use the mouse to aim your attack and then left click to shoot a ball of energy!",
+	"I’ll be on my way now. Good luck, my boy!"
 	]
 }
