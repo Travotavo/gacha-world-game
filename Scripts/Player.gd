@@ -6,7 +6,7 @@ signal player_died
 
 var movespeed=200
 var bulletspeed=1000
-var bullet=preload("res://Assets/Prefabs/Bullet.tscn")
+var bullet=preload("res://Assets/Prefabs/Player/Bullet.tscn")
 
 
 # Called when the node enters the scene tree for the first time.

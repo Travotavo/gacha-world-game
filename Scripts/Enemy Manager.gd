@@ -9,13 +9,13 @@ onready var enemies = get_node(enemies_path)
 signal enemies_defeated
 
 func _ready():
+	print("Oopsie")
 	for i in self.get_children():
 		i.connect("enemy_defeated", self, "_enemy_check")
 
 func _enemy_check():
 	print("Enemy Died!")
 	if get_child_count()-1 == 0:
-		print("All Enemies Dead!")
 		emit_signal("enemies_defeated")
 
 #Not needed yet, but added for clarity on manager's purpose/functionality

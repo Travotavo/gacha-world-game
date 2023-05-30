@@ -21,7 +21,7 @@ func _ready():
 func _physics_process(delta):
 	if awake:
 		velocity = Vector2.ZERO
-		velocity = position.direction_to(Global.get("player").position) * speed
+		velocity = global_position.direction_to(Global.get("player").global_position) * speed
 		velocity = move_and_slide(velocity)
 
 

@@ -3,7 +3,7 @@ extends Camera2D
 export var playerPath:NodePath
 var Player:Node
 
-export var lerpspeed = 2
+export var lerpspeed = 4
  
 func _ready():
 	Player = get_node(playerPath)
