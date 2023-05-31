@@ -27,6 +27,7 @@ func _physics_process(delta):
 
 func _on_HurtBox_area_entered(area):
 	if area.is_in_group("Bullet") and awake:
+		$Node2D/ColorRect2.visible = true
 		hp -= 1
 		updateHP()
 	if hp == 0:
@@ -34,7 +35,7 @@ func _on_HurtBox_area_entered(area):
 		queue_free()
 
 func updateHP():
-	$ColorRect2/ColorRect.rect_size.x = lerp(0,40,(float(hp)/hpMax))
+	$Node2D/ColorRect2/ColorRect.rect_size.x = lerp(0,40,(float(hp)/hpMax))
 
 func _on_WakeBox_area_entered(area):
 	if area.is_in_group("Player"):

@@ -19,6 +19,7 @@ script = ExtResource( 1 )
 hp = 5
 hpMax = 5
 speed = 100
+awake = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -1 )
@@ -43,14 +44,17 @@ collision_layer = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WakeBox"]
 shape = SubResource( 5 )
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-margin_left = -21.0
-margin_top = -27.0
-margin_right = 21.0
-margin_bottom = -19.0
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( -21, -27 )
+z_index = 1
+
+[node name="ColorRect2" type="ColorRect" parent="Node2D"]
+visible = false
+margin_right = 42.0
+margin_bottom = 8.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect2"]
+[node name="ColorRect" type="ColorRect" parent="Node2D/ColorRect2"]
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 41.0

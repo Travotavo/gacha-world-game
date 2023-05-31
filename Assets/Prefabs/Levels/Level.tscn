@@ -10,7 +10,7 @@
 
 [node name="Room" type="Node2D"]
 script = ExtResource( 5 )
-CheckpointsArr = [ [ 0, "res://Data/Dialogue/Tutorial-1.json" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave-1.tscn" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave-2.tscn" ], [ 2, null ], null, null, null, null, null, null ]
+CheckpointsArr = [ [ 0, "res://Data/Dialogue/Tutorial-1.json" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave-1.tscn" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave-2.tscn" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave-3.tscn" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave-3.tscn" ], null, null, null, null, null ]
 UIPath = NodePath("UI")
 CamPath = NodePath("Camera2D")
 
