@@ -9,39 +9,31 @@ script = ExtResource( 3 )
 [node name="Enemy2" parent="." instance=ExtResource( 1 )]
 position = Vector2( -525, -107 )
 speed = 200
-awake = true
 
 [node name="Enemy" parent="." instance=ExtResource( 1 )]
 position = Vector2( -525, -150 )
 speed = 200
-awake = true
 
 [node name="Enemy3" parent="." instance=ExtResource( 1 )]
 position = Vector2( -525, -18 )
 speed = 200
-awake = true
 
 [node name="Enemy4" parent="." instance=ExtResource( 1 )]
 position = Vector2( -525, -61 )
 speed = 200
-awake = true
 
 [node name="Enemy5" parent="." instance=ExtResource( 1 )]
 position = Vector2( -525, 75 )
 speed = 200
-awake = true
 
 [node name="Enemy6" parent="." instance=ExtResource( 1 )]
 position = Vector2( -525, 32 )
 speed = 200
-awake = true
 
 [node name="Enemy7" parent="." instance=ExtResource( 1 )]
 position = Vector2( -525, 162 )
 speed = 200
-awake = true
 
 [node name="Enemy8" parent="." instance=ExtResource( 1 )]
 position = Vector2( -525, 119 )
 speed = 200
-awake = true
