@@ -40,10 +40,12 @@ func _physics_process(delta):
 func fire():
 	var bullet_in=bullet.instance()
 	bullet_in.position = $Gun/Reticle.get_global_position()
-	bullet_in.rotation_degrees= $Gun.rotation_degrees
+	bullet_in.rotation_degrees= $Gun.rotation
 	bullet_in.apply_impulse(Vector2(),Vector2(bulletspeed,0).rotated($Gun.rotation))
 	get_tree().get_root().call_deferred("add_child",bullet_in)
 
 func _on_hurtbox_area_entered(area):
+	print("QwQ")
+	print(area.is_in_group("Enemy"))
 	if area.is_in_group("Enemy"):
 		emit_signal("player_died")

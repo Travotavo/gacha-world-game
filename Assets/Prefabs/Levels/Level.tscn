@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/Prefabs/Enemies/Boss.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Prefabs/Player/FollowCam.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Prefabs/UIs/UI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Prefabs/Player/Player.tscn" type="PackedScene" id=4]
@@ -11,7 +10,7 @@
 
 [node name="Room" type="Node2D"]
 script = ExtResource( 5 )
-CheckpointsArr = [ [ 0, "res://Data/Dialogue/Tutorial-1.json" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave-1.tscn" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave-2.tscn" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave-3.tscn" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave-3.tscn" ], null, null, null, null, null ]
+CheckpointsArr = [ [ 0, "res://Data/Dialogue/Tutorial-1.json" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave-1.tscn" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave-2.tscn" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave-3.tscn" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave-3.tscn" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave Boss.tscn" ], null, null, null, null ]
 UIPath = NodePath("UI")
 CamPath = NodePath("Camera2D")
 
@@ -52,8 +51,5 @@ region_rect = Rect2( 0, 0, 2112, 60 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Boss" parent="." instance=ExtResource( 1 )]
-position = Vector2( 300, 0 )
 
 [connection signal="player_died" from="Player" to="." method="_on_Player_player_died"]
