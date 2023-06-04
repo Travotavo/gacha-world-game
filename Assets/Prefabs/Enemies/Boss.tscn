@@ -43,10 +43,34 @@ margin_right = 41.0
 margin_bottom = 7.0
 color = Color( 1, 0, 0, 1 )
 
-[node name="Gun" type="Node2D" parent="."]
+[node name="right" type="Node2D" parent="."]
+visible = false
 rotation = 3.14159
 
-[node name="Sprite" type="Sprite" parent="Gun"]
+[node name="Sprite" type="Sprite" parent="right"]
+position = Vector2( -73, 0 )
+texture = ExtResource( 3 )
+
+[node name="up" type="Node2D" parent="."]
+visible = false
+rotation = 1.5708
+
+[node name="Sprite" type="Sprite" parent="up"]
+position = Vector2( -73, 0 )
+texture = ExtResource( 3 )
+
+[node name="left" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="left"]
+position = Vector2( -73, 0 )
+texture = ExtResource( 3 )
+
+[node name="down" type="Node2D" parent="."]
+visible = false
+rotation = 4.71239
+
+[node name="Sprite" type="Sprite" parent="down"]
 position = Vector2( -73, 0 )
 texture = ExtResource( 3 )
 
