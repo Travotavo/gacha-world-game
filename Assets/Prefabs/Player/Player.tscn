@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Textures/Player/gacha_protag_right.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Textures/Player/reticle.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Textures/Player/gacha_protag_front.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Textures/Player/gacha_protag_back.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Prefabs/UIs/UI Scenes/HP.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 10, 4.5 )
@@ -151,6 +152,10 @@ tracks/1/keys = {
 [node name="Player" type="KinematicBody2D" groups=["Solid"]]
 z_index = 1
 script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerHP" parent="CanvasLayer" instance=ExtResource( 6 )]
 
 [node name="Player_Vis" type="Sprite" parent="."]
 scale = Vector2( -1, 1 )

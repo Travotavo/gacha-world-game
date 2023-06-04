@@ -3,7 +3,9 @@ extends KinematicBody2D
 #fix enemy movement
 
 signal player_died
+signal player_hurt
 
+var HP = 3
 var movespeed=200
 var bulletspeed=1000
 var bullet=preload("res://Assets/Prefabs/Player/Bullet.tscn")
@@ -11,6 +13,7 @@ var bullet=preload("res://Assets/Prefabs/Player/Bullet.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.connect("player_hurt", $CanvasLayer/PlayerHP, "updateHP")
 	Global.set("player", self)
 	
 
@@ -45,7 +48,8 @@ func fire():
 	get_tree().get_root().call_deferred("add_child",bullet_in)
 
 func _on_hurtbox_area_entered(area):
-	print("QwQ")
-	print(area.is_in_group("Enemy"))
 	if area.is_in_group("Enemy"):
-		emit_signal("player_died")
+		HP -= 1
+		if HP <= 0:
+			emit_signal("player_died")
+		emit_signal("player_hurt", HP)
