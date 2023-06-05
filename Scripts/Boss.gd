@@ -54,7 +54,7 @@ func fire_bullet(direction,x_offset,y_offset,angle):
 	#bullet_in.position.x+offset;
 	#bullet_in.position.y+offset;
 	
-	bullet_in.apply_impulse(Vector2(),Vector2(bulletspeed,angle))
+	
 	get_tree().get_root().call_deferred("add_child",bullet_in)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
