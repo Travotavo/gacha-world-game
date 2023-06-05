@@ -1,0 +1,530 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Assets/Models/GachaMachine.glb" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Textures/gacha_logo_2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Prefabs/Capsule.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Menus/Main Menu.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Sounds/sfx/crank.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Prefabs/UIs/UI Scenes/CollectionUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Textures/UI/go_hover.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Textures/UI/go_norm.png" type="Texture" id=8]
+
+[sub_resource type="Animation" id=9]
+resource_name = "CamSpin"
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Camera")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray(  )
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Camera:translation:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -1.37109, -0.25, 0, 0.25, 0, -0.199391, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Camera:translation:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1.68417, -0.25, 0, 0.25, 0, 1.42157, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Camera:translation:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0.638106, -0.25, 0, 0.25, 0, 1.79492, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Camera:rotation_degrees:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Camera:rotation_degrees:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( -65.519, -0.25, 0, 0.25, 0, -7.746, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Camera:rotation_degrees:z")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("UI:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "Dispense"
+length = 2.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.75, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0.961936, 1.4573, 1.9299 ), Vector3( -1.07558, 2.47684, 1.6576 ), Vector3( 0.990911, 0.609346, 1.35358 ), Vector3( 0, 1.48035, 2.53516 ), Vector3( 0, 1.48035, 2.53516 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.75, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0, 22.542, 0 ), Vector3( -30, -31.587, 0 ), Vector3( 30, 42.621, 0 ), Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Machine:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.15, 0.2, 0.35, 0.5, 0.75, 0.9, 0.95, 1.1, 1.25, 1.5, 1.65, 1.7, 1.85, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 1, 1, 1 ), Vector3( 1, 0.93, 1 ), Vector3( 1, 1.05, 1 ), Vector3( 1, 0.93, 1 ), Vector3( 1, 1, 1 ), Vector3( 1, 1, 1 ), Vector3( 1, 0.93, 1 ), Vector3( 1, 1.05, 1 ), Vector3( 1, 0.93, 1 ), Vector3( 1, 1, 1 ), Vector3( 1, 1, 1 ), Vector3( 1, 0.93, 1 ), Vector3( 1, 1.05, 1 ), Vector3( 1, 0.93, 1 ), Vector3( 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Machine:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Machine:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.15, 0.2, 0.35, 0.5, 0.75, 0.9, 0.95, 1.1, 1.25, 1.5, 1.65, 1.7, 1.85, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -1.016 ), Vector3( -3.41, 0, -2 ), Vector3( 0, 0, -1.016 ), Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 0, 0, -1.016 ), Vector3( -3.41, 0, -2 ), Vector3( 0, 0, -1.016 ), Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 0, 0, -1.016 ), Vector3( -3.41, 0, -2 ), Vector3( 0, 0, -1.016 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "Enter"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.48035, 2.53516 ), Vector3( 0, 1.48035, 1.43076 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera:rotation_degrees")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -480 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "loadLevel"
+} ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Camera:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -1.37109, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Camera:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1.68417, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Camera:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0.638106, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Camera:rotation_degrees:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Camera:rotation_degrees:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( -65.519, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Camera:rotation_degrees:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Machine:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Machine:translation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Machine:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -1.016 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("UI:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Camera:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -480 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Camera:translation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.48035, 2.53516 ) ]
+}
+
+[sub_resource type="ProceduralSky" id=8]
+sky_top_color = Color( 0.984314, 0.772549, 0.32549, 1 )
+sky_horizon_color = Color( 0.226563, 0.173936, 0.0628357, 1 )
+sky_curve = 1.05414
+sky_energy = 6.89
+sun_curve = 13.2514
+
+[sub_resource type="Environment" id=7]
+background_mode = 1
+background_sky = SubResource( 8 )
+background_sky_custom_fov = 59.2
+background_color = Color( 0.984314, 0.772549, 0.32549, 1 )
+background_energy = 0.0
+ambient_light_energy = 0.0
+ambient_light_sky_contribution = 0.0
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_transparent = true
+albedo_color = Color( 0.917647, 0.933333, 1, 0.462745 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.192571, 0.0372018, 0.123759 )
+
+[sub_resource type="BoxShape" id=13]
+extents = Vector3( 0.0543059, 0.617858, 0.268396 )
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+flags_unshaded = true
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="PlaneMesh" id=5]
+material = SubResource( 4 )
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="UI" type="Control" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="CollectionUI" parent="UI" instance=ExtResource( 6 )]
+
+[node name="Go Button" type="TextureButton" parent="UI"]
+margin_left = 666.0
+margin_top = 170.0
+margin_right = 1123.0
+margin_bottom = 550.0
+rect_scale = Vector2( 0.75, 0.75 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/CamSpin = SubResource( 9 )
+anims/Dispense = SubResource( 14 )
+anims/Enter = SubResource( 15 )
+anims/RESET = SubResource( 10 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.414391, 0, -0.910099, 0, 1, 0, 0.910099, 0, 0.414391, -1.37109, 1.68417, 0.638106 )
+environment = SubResource( 7 )
+
+[node name="Machine" type="Spatial" parent="."]
+transform = Transform( 0.999843, 0.0177316, 0, -0.0177316, 0.999843, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="GachaMachine" parent="Machine" instance=ExtResource( 1 )]
+
+[node name="Cube001" parent="Machine/GachaMachine" index="1"]
+material/0 = SubResource( 6 )
+
+[node name="StaticBody3" type="StaticBody" parent="Machine"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Machine/StaticBody3"]
+transform = Transform( 2.14764, 0, 0, 0, 1.41803, 2.61846, 0, -1.17911, 3.14902, 0, 1.14478, 0.71862 )
+shape = SubResource( 3 )
+
+[node name="StaticBody2" type="StaticBody" parent="Machine"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Machine/StaticBody2"]
+transform = Transform( 2.14764, 0, 0, 0, 1.84421, 0, 0, 0, 4.09544, 0, 1.05762, 0.0362503 )
+shape = SubResource( 3 )
+
+[node name="StaticBody4" type="StaticBody" parent="Machine"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Machine/StaticBody4"]
+transform = Transform( 2.14764, 0, 0, 0, 1.84421, 0, 0, 0, 4.09544, 0.523607, 1.05762, 0.0362503 )
+shape = SubResource( 13 )
+
+[node name="StaticBody5" type="StaticBody" parent="Machine"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11038, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Machine/StaticBody5"]
+transform = Transform( 2.14764, 0, 0, 0, 1.84421, 0, 0, 0, 4.09544, 0.579415, 1.05762, 0.0362503 )
+shape = SubResource( 13 )
+
+[node name="StaticBody6" type="StaticBody" parent="Machine"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.121563, 0, 1.41964 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Machine/StaticBody6"]
+transform = Transform( 2.14764, 0, 0, 0, 1.84421, 0, 0, 0, 4.09544, 0.523607, 1.05762, 0.0362503 )
+shape = SubResource( 13 )
+
+[node name="StaticBody7" type="StaticBody" parent="Machine"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.121563, 0, -0.00934708 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Machine/StaticBody7"]
+transform = Transform( 2.14764, 0, 0, 0, 1.84421, 0, 0, 0, 4.09544, 0.523607, 1.05762, 0.0362503 )
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Machine"]
+transform = Transform( 1.24323e-08, 1, 1.36725e-15, -1.56396e-08, 6.83627e-16, -0.357791, -0.357791, -7.17832e-08, 1.56396e-08, 0.627177, 1.67961, 0.181068 )
+mesh = SubResource( 5 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Machine"]
+transform = Transform( 1.88468e-08, -1, -2.73451e-15, -1.56396e-08, 6.83627e-16, -0.357791, 0.357791, 1.59206e-07, -1.56396e-08, -0.629298, 1.67961, 0.181068 )
+mesh = SubResource( 5 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CapBox" type="Spatial" parent="."]
+
+[node name="Capsule2" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0210317, 1.78745, 0.195387 )
+
+[node name="Capsule3" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.269197, 1.78745, 0.195387 )
+
+[node name="Capsule4" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.273106, 1.78745, 0.195387 )
+
+[node name="Capsule5" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.117297, 1.78745, -0.0309477 )
+
+[node name="Capsule6" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.170922, 1.78745, -0.0309477 )
+
+[node name="Capsule7" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.170922, 1.78745, 0.438939 )
+
+[node name="Capsule8" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.130547, 1.78745, 0.438939 )
+
+[node name="Capsule9" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 0.968422, -0.148349, -0.200381, 0.187266, 0.963402, 0.191803, 0.164594, -0.22327, 0.96076, 0, 1.48558, 0 )
+
+[node name="Capsule10" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 0.968422, -0.148349, -0.200381, 0.187266, 0.963402, 0.191803, 0.164594, -0.22327, 0.96076, 0.248165, 1.48558, 0 )
+
+[node name="Capsule11" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 0.968422, -0.148349, -0.200381, 0.187266, 0.963402, 0.191803, 0.164594, -0.22327, 0.96076, -0.294138, 1.48558, 0 )
+
+[node name="Capsule12" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 0.968422, -0.148349, -0.200381, 0.187266, 0.963402, 0.191803, 0.164594, -0.22327, 0.96076, -0.138329, 1.48558, -0.226334 )
+
+[node name="Capsule13" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 0.968422, -0.148349, -0.200381, 0.187266, 0.963402, 0.191803, 0.164594, -0.22327, 0.96076, 0.14989, 1.48558, -0.226334 )
+
+[node name="Capsule14" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 0.968422, -0.148349, -0.200381, 0.187266, 0.963402, 0.191803, 0.164594, -0.22327, 0.96076, 0.14989, 1.48558, 0.243553 )
+
+[node name="Capsule15" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 0.968422, -0.148349, -0.200381, 0.187266, 0.963402, 0.191803, 0.164594, -0.22327, 0.96076, -0.151579, 1.48558, 0.243553 )
+
+[node name="Capsule16" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 0.961014, 0.271203, 0.0538611, -0.261495, 0.95475, -0.141679, -0.0898476, 0.122071, 0.988446, 0, 1.21812, 0 )
+
+[node name="Capsule17" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 0.961014, 0.271203, 0.0538611, -0.261495, 0.95475, -0.141679, -0.0898476, 0.122071, 0.988446, 0.248165, 1.21812, 0 )
+
+[node name="Capsule18" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 0.961014, 0.271203, 0.0538611, -0.261495, 0.95475, -0.141679, -0.0898476, 0.122071, 0.988446, -0.294138, 1.21812, 0 )
+
+[node name="Capsule19" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 0.961014, 0.271203, 0.0538611, -0.261495, 0.95475, -0.141679, -0.0898476, 0.122071, 0.988446, -0.138329, 1.21812, -0.226334 )
+
+[node name="Capsule20" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 0.961014, 0.271203, 0.0538611, -0.261495, 0.95475, -0.141679, -0.0898476, 0.122071, 0.988446, 0.14989, 1.21812, -0.226334 )
+
+[node name="Capsule21" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 0.961014, 0.271203, 0.0538611, -0.261495, 0.95475, -0.141679, -0.0898476, 0.122071, 0.988446, 0.14989, 1.21812, 0.243553 )
+
+[node name="Capsule22" parent="CapBox" instance=ExtResource( 3 )]
+transform = Transform( 0.961014, 0.271203, 0.0538611, -0.261495, 0.95475, -0.141679, -0.0898476, 0.122071, 0.988446, -0.151579, 1.21812, 0.243553 )
+
+[node name="CrankSounds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[connection signal="button_down" from="UI/Go Button" to="." method="_on_Go_Button_button_down"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+
+[editable path="Machine/GachaMachine"]
