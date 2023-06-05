@@ -60,6 +60,6 @@ func fire_bullet(direction,x_offset,y_offset,angle):
 #func _process(delta):
 #	pass
 func fire_arrow(direction):
-	fire_bullet(direction,0,10,480);
+	fire_bullet(direction,0,10,180);
 	fire_bullet(direction,0,-10,-180);
 	fire_bullet(direction,0,0,0);

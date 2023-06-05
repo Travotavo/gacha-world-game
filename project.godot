@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Gacha World"
-run/main_scene="res://Assets/Prefabs/Levels/Level.tscn"
+run/main_scene="res://Assets/Prefabs/Levels/Tutorial.tscn"
 config/icon="res://icon.png"
 
 [autoload]
