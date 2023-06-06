@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ghost-level.wav-ae546b1bfd1cf9ed81a53c9b2282d370.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/ghost-level.wav"
+dest_files=[ "res://.import/ghost-level.wav-ae546b1bfd1cf9ed81a53c9b2282d370.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
