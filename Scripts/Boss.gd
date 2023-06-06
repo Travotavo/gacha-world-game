@@ -9,13 +9,21 @@ var hpMax = 10
 var speed = 20
 var movespeed=200
 var bulletspeed=200
+var time=1
 var bullet=preload("res://Assets/Prefabs/Enemies/Enemy Bullet.tscn")
 export var awake = true
+var timer := Timer.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if awake:
 		$Sprite.modulate = Color.white
-	fire_arrow(1) # Replace with function body.
+		
+		add_child(timer)
+		timer.one_shot = false
+		timer.start()
+		timer.connect("timeout", self, "_on_timer_timeout")
+
+
 
 func _on_HurtBox_area_entered(area):
 	print(awake)
@@ -54,12 +62,34 @@ func fire_bullet(direction,x_offset,y_offset,angle):
 	#bullet_in.position.x+offset;
 	#bullet_in.position.y+offset;
 	
-	
+	bullet_in.apply_impulse(Vector2(),Vector2(bulletspeed,0).rotated(angle))
 	get_tree().get_root().call_deferred("add_child",bullet_in)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 func fire_arrow(direction):
-	fire_bullet(direction,0,10,180);
-	fire_bullet(direction,0,-10,-180);
-	fire_bullet(direction,0,0,0);
+	if(direction==1):
+		fire_bullet(direction,0,10,0.785398);
+		fire_bullet(direction,0,-10,-0.785398);
+		fire_bullet(direction,0,0,0);
+	elif(direction==2):
+		fire_bullet(direction,10,0,-0.78539816339);
+		fire_bullet(direction,-10,0,-3.14159265359*3/4);
+		fire_bullet(direction,0,0,-3.14159265359/2);
+	elif(direction==3):
+		fire_bullet(direction,0,10,3.14159265359*3/4);
+		fire_bullet(direction,0,-10,-3.14159265359*3/4);
+		fire_bullet(direction,0,0,3.14159265359);
+	elif(direction==4):
+		fire_bullet(direction,10,0,0.78539816339);
+		fire_bullet(direction,-10,0,3.14159265359*3/4);
+		fire_bullet(direction,0,0,3.14159265359/2);
+
+
+func _on_timer_timeout() -> void:
+		fire_arrow(1)
+		fire_arrow(2)
+		fire_arrow(3) # Replace with function body.
+		fire_arrow(4)
+		if(hp<0):
+			timer.one_shot = true
