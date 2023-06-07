@@ -32,7 +32,7 @@ func processCheckpoint():
 			var blueprint = preloadArr[loadedArrPos]
 			loadedArrPos += 1
 			var wave = blueprint.instance()
-			add_child(wave)
+			call_deferred("add_child", wave)
 			wave.position = CamPoint.position
 			wave.connect("enemies_defeated", self, "advanceArr")
 			pass

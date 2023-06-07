@@ -375,8 +375,6 @@ modulate = Color( 1, 1, 1, 0 )
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="CollectionUI" parent="UI" instance=ExtResource( 6 )]
-
 [node name="Go Button" type="TextureButton" parent="UI"]
 margin_left = 666.0
 margin_top = 170.0
@@ -387,6 +385,8 @@ texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 8 )
 texture_hover = ExtResource( 7 )
 
+[node name="CollectionUI" parent="UI" instance=ExtResource( 6 )]
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/CamSpin = SubResource( 9 )
 anims/Dispense = SubResource( 14 )
@@ -394,7 +394,7 @@ anims/Enter = SubResource( 15 )
 anims/RESET = SubResource( 10 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.414391, 0, -0.910099, 0, 1, 0, 0.910099, 0, 0.414391, -1.37109, 1.68417, 0.638106 )
+transform = Transform( 0.414392, 0, -0.910099, 0, 1, 0, 0.910099, 0, 0.414392, -1.37109, 1.68417, 0.638106 )
 environment = SubResource( 7 )
 
 [node name="Machine" type="Spatial" parent="."]
@@ -408,7 +408,7 @@ material/0 = SubResource( 6 )
 [node name="StaticBody3" type="StaticBody" parent="Machine"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Machine/StaticBody3"]
-transform = Transform( 2.14764, 0, 0, 0, 1.41803, 2.61846, 0, -1.17911, 3.14902, 0, 1.14478, 0.71862 )
+transform = Transform( 2.14762, -0.00401503, 0.0135582, 0.000950616, 1.64443, 1.85395, -0.00845625, -0.834835, 3.65176, 0, 1.14478, 0.71862 )
 shape = SubResource( 3 )
 
 [node name="StaticBody2" type="StaticBody" parent="Machine"]

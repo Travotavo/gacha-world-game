@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Resources/RoundedElements.tres" type="StyleBox" id=1]
 [ext_resource path="res://Assets/Textures/UI/arrow.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Collection.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Fonts/CANDARA.TTF" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Prefabs/UIs/CollectableDisplay.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -53,6 +55,24 @@ tracks/0/keys = {
 [sub_resource type="Theme" id=3]
 Panel/styles/panel = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=7]
+size = 37
+outline_size = 1
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=8]
+default_font = SubResource( 7 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 90
+outline_size = 2
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 9 )
+
 [node name="CollectionUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -95,6 +115,18 @@ margin_right = 492.0
 margin_bottom = 4.0
 theme = SubResource( 3 )
 
+[node name="Collection Display" parent="Collection/Panel" instance=ExtResource( 5 )]
+position = Vector2( 429, 65 )
+Model_Path = "res://Assets/Models/Figures/Gem/Gem.glb"
+
+[node name="Collection Display2" parent="Collection/Panel" instance=ExtResource( 5 )]
+position = Vector2( 264, 65 )
+Model_Path = "res://Assets/Models/Figures/GachaGuy/Smile.glb"
+
+[node name="Collection Display3" parent="Collection/Panel" instance=ExtResource( 5 )]
+position = Vector2( 103, 65 )
+Model_Path = "res://Assets/Models/Figures/Mummy/Mummy.glb"
+
 [node name="Panel2" type="Panel" parent="Collection"]
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -112,6 +144,32 @@ margin_bottom = 92.9998
 focus_mode = 0
 enabled_focus_mode = 0
 texture_normal = ExtResource( 2 )
+
+[node name="Label2" type="Label" parent="Collection/Panel2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -216.5
+margin_right = 216.5
+margin_bottom = 169.0
+theme = SubResource( 8 )
+text = "COLLECTION
+COMPLETION"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="Collection/Panel2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -123.0
+margin_top = -110.0
+margin_right = 123.0
+margin_bottom = 110.0
+theme = SubResource( 5 )
+text = "100%"
+align = 1
+valign = 1
 
 [connection signal="button_down" from="TextureButton_2" to="." method="_on_TextureButton_2_button_down"]
 [connection signal="button_down" from="Collection/Panel2/TextureButton" to="." method="_on_TextureButton_button_down"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scripts/Boss.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Behaviors/Boss.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Textures/Enemies/cursed treasure (updated).png" type="Texture" id=2]
 [ext_resource path="res://Assets/Textures/Player/reticle.png" type="Texture" id=3]
 

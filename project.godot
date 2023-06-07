@@ -10,13 +10,15 @@ config_version=4
 
 [application]
 
-config/name="Gacha World"
+config/name="PonPon GachaVerse"
 run/main_scene="res://Assets/Menus/Main Menu.tscn"
-config/icon="res://icon.png"
+config/use_custom_user_dir=true
+config/icon="res://Assets/icon.png"
 
 [autoload]
 
 Global="*res://Scripts/Globals/Global.gd"
+SaveManager="*res://Scripts/Globals/save_manager.gd"
 
 [display]
 
