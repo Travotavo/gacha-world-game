@@ -448,13 +448,11 @@ shape = SubResource( 13 )
 transform = Transform( 1.24323e-08, 1, 1.36725e-15, -1.56396e-08, 6.83627e-16, -0.357791, -0.357791, -7.17832e-08, 1.56396e-08, 0.627177, 1.67961, 0.181068 )
 mesh = SubResource( 5 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Machine"]
 transform = Transform( 1.88468e-08, -1, -2.73451e-15, -1.56396e-08, 6.83627e-16, -0.357791, 0.357791, 1.59206e-07, -1.56396e-08, -0.629298, 1.67961, 0.181068 )
 mesh = SubResource( 5 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="CapBox" type="Spatial" parent="."]
 
