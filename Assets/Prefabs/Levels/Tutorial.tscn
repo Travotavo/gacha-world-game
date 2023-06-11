@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Prefabs/UIs/UI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Prefabs/Player/FollowCam.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Textures/Levels/Desert/Desert-Wall.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sounds/Music/Desert_Level.mp3" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Textures/Levels/Desert/Desert-Floor.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Prefabs/Enemies/Shooter Down.tscn" type="PackedScene" id=9]
 
 [node name="Room" type="Node2D"]
 script = ExtResource( 5 )
@@ -55,5 +56,8 @@ __meta__ = {
 
 [node name="Shooter" parent="." instance=ExtResource( 4 )]
 position = Vector2( 445, 47 )
+
+[node name="Shooter Down" parent="." instance=ExtResource( 9 )]
+position = Vector2( 276, 57 )
 
 [connection signal="player_died" from="Player" to="." method="_on_Player_player_died"]
