@@ -15,13 +15,10 @@ export var awake = false
 var timer := Timer.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	if awake:
 		$Sprite.modulate = Color.white
 		$WakeBox.queue_free()
-		add_child(timer)
-		timer.one_shot = false
-		timer.start()
-		timer.connect("timeout", self, "_on_timer_timeout")
+		
 
 
 
@@ -98,5 +95,10 @@ func _on_timer_timeout() -> void:
 
 func _on_WakeBox_area_entered(area):
 	if area.is_in_group("Player"):
+		print("screeeeeeeee");
 		$Sprite.modulate = Color.white
 		awake = true
+		add_child(timer)
+		timer.one_shot = false
+		timer.start()
+		timer.connect("timeout", self, "_on_timer_timeout")
