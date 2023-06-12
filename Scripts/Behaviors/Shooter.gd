@@ -13,6 +13,8 @@ var time=4
 var bullet=preload("res://Assets/Prefabs/Enemies/Enemy Bullet.tscn")
 export var awake = false
 var timer := Timer.new()
+
+signal enemy_defeated
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if awake:
@@ -31,8 +33,6 @@ func _on_HurtBox_area_entered(area):
 		hp -= 1
 		updateHP()
 	if hp == 0:
-		save.tutorial = true
-		SaveManager.save_data()
 		emit_signal("enemy_defeated")
 		queue_free()
 		
@@ -60,7 +60,6 @@ func fire_bullet(direction,x_offset,y_offset,angle):
 		bullet_in.rotation_degrees= $down.rotation
 	#bullet_in.position.x+offset;
 	#bullet_in.position.y+offset;
-	
 	bullet_in.apply_impulse(Vector2(),Vector2(bulletspeed,0).rotated(angle))
 	get_tree().get_root().call_deferred("add_child",bullet_in)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -84,18 +83,19 @@ func fire_arrow(direction):
 		fire_bullet(direction,-10,0,3.14159265359*3/4);
 		fire_bullet(direction,0,0,3.14159265359/2);
 
+export var fire_down = false
 
 func _on_timer_timeout() -> void:
-	print("QwQ")
-	
-	fire_bullet(2,0,10,deg2rad(randi()%180)*-1);
+	if not fire_down:
+		fire_bullet(2,0,10,deg2rad(randi()%180)*-1)
+	else:
+		fire_bullet(4,0,10,deg2rad(randi()%180)*1)
 	if(hp<0):
 		timer.one_shot = true
 
 
 func _on_WakeBox_area_entered(area):
 	if area.is_in_group("Player"):
-		print("screeeeeeeee");
 		$Sprite.modulate = Color.white
 		awake = true
 		add_child(timer)

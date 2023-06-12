@@ -4,8 +4,8 @@ extends Control
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var healthy = preload("res://Assets/Textures/UI/heart.png")
-var damage = preload("res://Assets/Textures/UI/heartbroke.png")
+var healthy = preload("res://Assets/Textures/UI/Game/heart.png")
+var damage = preload("res://Assets/Textures/UI/Game/heartbroke.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

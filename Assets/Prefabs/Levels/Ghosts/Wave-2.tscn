@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Prefabs/Enemies/Themed_chaser/Skull.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Prefabs/Enemies/Themed_shooter/Cultist.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Enemy Manager.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Behaviors/Chaser.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Prefabs/Enemies/Themed_shooter/Cultist.gd" type="Script" id=5]
+
+[node name="EnemyBox" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Shooter2" type="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 335, 266 )
+script = ExtResource( 5 )
+
+[node name="Shooter" type="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 319, -205 )
+script = ExtResource( 5 )
+fire_down = true
+
+[node name="Shooter3" type="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 433, 266 )
+script = ExtResource( 5 )
+
+[node name="Shooter4" type="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 417, -205 )
+script = ExtResource( 5 )
+fire_down = true
+
+[node name="Enemy" type="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 609, 164 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 4 )
+hp = 5
+hpMax = 5
+speed = 100
+awake = true
+
+[node name="Enemy2" type="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -661, 176 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 4 )
+hp = 5
+hpMax = 5
+speed = 100
+awake = true
+
+[node name="Enemy3" type="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -663, -186 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 4 )
+hp = 5
+hpMax = 5
+speed = 100
+awake = true
+
+[node name="Enemy4" type="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 607, -202 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 4 )
+hp = 5
+hpMax = 5
+speed = 100
+awake = true
+
+[node name="Enemy5" type="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -251, -438 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 4 )
+hp = 5
+hpMax = 5
+speed = 100
+awake = true
+
+[node name="Enemy6" type="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 207, -448 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 4 )
+hp = 5
+hpMax = 5
+speed = 100
+awake = true
+
+[node name="Enemy7" type="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -229, 504 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 4 )
+hp = 5
+hpMax = 5
+speed = 100
+awake = true
+
+[node name="Enemy8" type="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 261, 518 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 4 )
+hp = 5
+hpMax = 5
+speed = 100
+awake = true

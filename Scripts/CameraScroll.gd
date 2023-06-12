@@ -9,5 +9,4 @@ func _ready():
 	Player = get_node(playerPath)
 	self.position = Player.position
 func _physics_process(delta):
-	if Player.position.x > self.position.x:
-		self.position.x = lerp(self.position.x, Player.position.x, lerpspeed * delta)
+	self.position.x = lerp(self.position.x, Player.position.x, lerpspeed * delta)

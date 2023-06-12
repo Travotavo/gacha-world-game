@@ -30,7 +30,7 @@ func _on_HurtBox_area_entered(area):
 		$Node2D/ColorRect2.visible = true
 		hp -= 1
 		updateHP()
-	if hp == 0:
+	if hp == 0 or area.is_in_group("Player"):
 		emit_signal("enemy_defeated")
 		queue_free()
 

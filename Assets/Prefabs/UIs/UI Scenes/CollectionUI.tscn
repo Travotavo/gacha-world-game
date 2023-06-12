@@ -1,10 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Resources/RoundedElements.tres" type="StyleBox" id=1]
-[ext_resource path="res://Assets/Textures/UI/arrow.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/UI/Buttons/arrow.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Collection.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Fonts/CANDARA.TTF" type="DynamicFontData" id=4]
-[ext_resource path="res://Assets/Prefabs/UIs/CollectableDisplay.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Textures/UI/Collection/mimic icon.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Prefabs/UIs/Collection Group.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Textures/UI/Collection/computer icon.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Textures/UI/Collection/ghost icon.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -79,9 +82,9 @@ anchor_bottom = 1.0
 script = ExtResource( 3 )
 
 [node name="TextureButton_2" type="TextureButton" parent="."]
-margin_left = 84.0
+margin_left = 990.0
 margin_top = 486.0
-margin_right = 192.0
+margin_right = 1098.0
 margin_bottom = 564.0
 rect_rotation = 90.0
 focus_mode = 0
@@ -115,19 +118,75 @@ margin_right = 492.0
 margin_bottom = 4.0
 theme = SubResource( 3 )
 
-[node name="Collection Display" parent="Collection/Panel" instance=ExtResource( 5 )]
-position = Vector2( 429, 65 )
-Model_Path = "res://Assets/Models/Figures/Gem/Gem.glb"
+[node name="Collection Group" parent="Collection/Panel" instance=ExtResource( 6 )]
+Tag = 4
 
-[node name="Collection Display2" parent="Collection/Panel" instance=ExtResource( 5 )]
-position = Vector2( 264, 65 )
-Model_Path = "res://Assets/Models/Figures/GachaGuy/Smile.glb"
+[node name="Collection Display" parent="Collection/Panel/Collection Group" index="1"]
+Collectable_Tag = "gem"
 
-[node name="Collection Display3" parent="Collection/Panel" instance=ExtResource( 5 )]
-position = Vector2( 103, 65 )
+[node name="Collection Display2" parent="Collection/Panel/Collection Group" index="2"]
 Model_Path = "res://Assets/Models/Figures/Mummy/Mummy.glb"
+Collectable_Tag = "mummy"
+
+[node name="Collection Group3" parent="Collection/Panel" instance=ExtResource( 6 )]
+visible = false
+margin_left = 176.0
+margin_right = 216.0
+Level = "res://Assets/Prefabs/Levels/Hacked-Laptop.tscn"
+Tag = 2
+
+[node name="TextureButton" parent="Collection/Panel/Collection Group3" index="0"]
+texture_normal = ExtResource( 7 )
+
+[node name="Collection Display" parent="Collection/Panel/Collection Group3" index="1"]
+Collectable_Tag = "virus"
+
+[node name="Collection Display2" parent="Collection/Panel/Collection Group3" index="2"]
+visible = false
+
+[node name="Collection Group4" parent="Collection/Panel" instance=ExtResource( 6 )]
+visible = false
+margin_left = 304.0
+margin_right = 344.0
+Level = "res://Assets/Prefabs/Levels/Ghost-Town.tscn"
+
+[node name="TextureButton" parent="Collection/Panel/Collection Group4" index="0"]
+texture_normal = ExtResource( 8 )
+
+[node name="Collection Display" parent="Collection/Panel/Collection Group4" index="1"]
+Collectable_Tag = "cultist"
+
+[node name="Collection Display2" parent="Collection/Panel/Collection Group4" index="2"]
+visible = false
+
+[node name="Collection Group2" parent="Collection/Panel" instance=ExtResource( 6 )]
+visible = false
+margin_left = 424.0
+margin_right = 464.0
+Level = "res://Assets/Prefabs/Levels/NopNop.tscn"
+Tag = 1
+
+[node name="TextureButton" parent="Collection/Panel/Collection Group2" index="0"]
+texture_normal = ExtResource( 5 )
+
+[node name="Collection Display" parent="Collection/Panel/Collection Group2" index="1"]
+Model_Path = "res://Assets/Models/Figures/GachaGuy/Smile.glb"
+Collectable_Tag = "mimic"
+
+[node name="Collection Display2" parent="Collection/Panel/Collection Group2" index="2"]
+visible = false
+
+[node name="TextureButton" type="TextureButton" parent="Collection/Panel"]
+margin_left = 24.0
+margin_top = 381.0
+margin_right = 132.0
+margin_bottom = 459.0
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 2 )
 
 [node name="Panel2" type="Panel" parent="Collection"]
+visible = false
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = -492.0
@@ -135,15 +194,6 @@ margin_top = -462.0
 margin_right = 20.0
 margin_bottom = 4.0
 theme = SubResource( 3 )
-
-[node name="TextureButton" type="TextureButton" parent="Collection/Panel2"]
-margin_left = 41.0
-margin_top = 28.9998
-margin_right = 105.0
-margin_bottom = 92.9998
-focus_mode = 0
-enabled_focus_mode = 0
-texture_normal = ExtResource( 2 )
 
 [node name="Label2" type="Label" parent="Collection/Panel2"]
 anchor_left = 0.5
@@ -172,4 +222,9 @@ align = 1
 valign = 1
 
 [connection signal="button_down" from="TextureButton_2" to="." method="_on_TextureButton_2_button_down"]
-[connection signal="button_down" from="Collection/Panel2/TextureButton" to="." method="_on_TextureButton_button_down"]
+[connection signal="button_down" from="Collection/Panel/TextureButton" to="." method="_on_TextureButton_button_down"]
+
+[editable path="Collection/Panel/Collection Group"]
+[editable path="Collection/Panel/Collection Group3"]
+[editable path="Collection/Panel/Collection Group4"]
+[editable path="Collection/Panel/Collection Group2"]

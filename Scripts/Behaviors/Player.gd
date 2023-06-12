@@ -48,7 +48,7 @@ func fire():
 	get_tree().get_root().call_deferred("add_child",bullet_in)
 
 func _on_hurtbox_area_entered(area):
-	if area.is_in_group("Enemy"):
+	if area.is_in_group("Enemy") or area.is_in_group("EnemyBullet"):
 		HP -= 1
 		if HP <= 0:
 			emit_signal("player_died")

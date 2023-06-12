@@ -48,6 +48,8 @@ func advanceArr():
 func _on_EnemyBox_enemies_defeated():
 	advanceArr()
 
-
+func _process(delta):
+	if (Input.is_action_just_pressed("ui_end")):
+		get_tree().quit()
 func _on_Player_player_died():
-	get_tree().change_scene("res://Assets/Menus/Temp_Lose.tscn")
+	get_tree().change_scene("res://Assets/Menus/Main Menu.tscn")

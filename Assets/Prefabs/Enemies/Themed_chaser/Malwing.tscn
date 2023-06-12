@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Behaviors/Chaser.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/Enemies/Malwing.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 11.0
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 11.0
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 194.01
+
+[node name="Enemy" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+hp = 5
+hpMax = 5
+speed = 100
+awake = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -1 )
+shape = SubResource( 3 )
+
+[node name="HurtBox" type="Area2D" parent="." groups=["Enemy", "Solid"]]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2( 0, -1 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.235294, 0.235294, 0.235294, 1 )
+position = Vector2( 0, -3 )
+texture = ExtResource( 2 )
+
+[node name="WakeBox" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WakeBox"]
+shape = SubResource( 5 )
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( -21, -27 )
+z_index = 1
+
+[node name="ColorRect2" type="ColorRect" parent="Node2D"]
+visible = false
+margin_right = 42.0
+margin_bottom = 8.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Node2D/ColorRect2"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 41.0
+margin_bottom = 7.0
+color = Color( 1, 0, 0, 1 )
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+[connection signal="area_entered" from="WakeBox" to="." method="_on_WakeBox_area_entered"]

@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/Prefabs/Enemies/Boss.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Prefabs/Collectable.tscn" type="PackedScene" id=2]
 
 [node name="EnemyBox" type="Node2D"]
 position = Vector2( 88, 0 )
 
+[node name="Collectable" parent="." instance=ExtResource( 2 )]
+position = Vector2( 275, -8 )
+id = "gem"
+
 [node name="Boss" parent="." instance=ExtResource( 1 )]
-position = Vector2( -175, 0 )
+position = Vector2( 281, -1 )

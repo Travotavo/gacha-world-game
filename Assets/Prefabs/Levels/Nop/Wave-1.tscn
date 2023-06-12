@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Prefabs/Enemies/Themed_chaser/Mimic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Enemy Manager.gd" type="Script" id=3]
+
+[node name="EnemyBox" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Enemy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1109, -12 )
+hp = 2
+hpMax = 2
+
+[node name="Enemy2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1572, -194 )
+hp = 2
+hpMax = 2
+
+[node name="Enemy3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1926, 205 )
+hp = 2
+hpMax = 2
+
+[node name="Enemy4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2390, -119 )
+hp = 2
+hpMax = 2
+
+[node name="Enemy5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2471, 92 )
+hp = 2
+hpMax = 2
+
+[node name="Enemy6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2326, 25 )
+hp = 2
+hpMax = 2
+
+[node name="Enemy7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2652, -79 )
+hp = 2
+hpMax = 2
+
+[node name="Enemy8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2564, -178 )
+hp = 2
+hpMax = 2
+
+[node name="Enemy9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2645, 33 )
+hp = 2
+hpMax = 2
+
+[node name="Enemy10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2500, -34 )
+hp = 2
+hpMax = 2
+
+[node name="Enemy11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2826, -138 )
+hp = 2
+hpMax = 2
+
+[node name="Enemy12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2617, -55 )
+hp = 2
+hpMax = 2
+
+[node name="Enemy13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2698, 156 )
+hp = 2
+hpMax = 2
+
+[node name="Enemy14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2553, 89 )
+hp = 2
+hpMax = 2
+
+[node name="Enemy15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2879, -15 )
+hp = 2
+hpMax = 2

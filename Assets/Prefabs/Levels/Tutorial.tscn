@@ -1,16 +1,16 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Prefabs/UIs/UI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Prefabs/Player/FollowCam.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Prefabs/Player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Prefabs/Enemies/Shooter.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Prefabs/Collectable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Prefabs/Levels/Level.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Textures/Levels/Desert/Desert-Wall.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sounds/Music/Desert_Level.mp3" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Textures/Levels/Desert/Desert-Floor.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Prefabs/Enemies/Shooter Down.tscn" type="PackedScene" id=9]
 
 [node name="Room" type="Node2D"]
+position = Vector2( -3, -9 )
 script = ExtResource( 5 )
 CheckpointsArr = [ [ 0, "res://Data/Dialogue/Tutorial-1.json" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave-1.tscn" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave-2.tscn" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave-3.tscn" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave-3.tscn" ], [ 1, "res://Assets/Prefabs/Levels/Tutorial/Wave Boss.tscn" ], null, null, null, null ]
 UIPath = NodePath("UI")
@@ -54,10 +54,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Shooter" parent="." instance=ExtResource( 4 )]
-position = Vector2( 445, 47 )
-
-[node name="Shooter Down" parent="." instance=ExtResource( 9 )]
-position = Vector2( 276, 57 )
+[node name="Collectable" parent="." instance=ExtResource( 4 )]
+position = Vector2( 87, 2 )
+id = "mummy"
+mainMenu = false
 
 [connection signal="player_died" from="Player" to="." method="_on_Player_player_died"]

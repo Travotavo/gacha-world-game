@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Creepy-Level.wav-7a738ec01be81f439eb1e2a9ca70bff6.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/Creepy-Level.wav"
+dest_files=[ "res://.import/Creepy-Level.wav-7a738ec01be81f439eb1e2a9ca70bff6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
