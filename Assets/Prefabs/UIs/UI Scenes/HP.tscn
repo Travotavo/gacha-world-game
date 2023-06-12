@@ -41,6 +41,30 @@ tracks/2/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Heart4:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Heart5:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
@@ -82,6 +106,30 @@ tracks/2/keys = {
 "update": 0,
 "values": [ 0.0, 30.0, 0.0, -30.0, 0.0 ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Heart4:rotation_degrees")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 30.0, 0.0, -30.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Heart5:rotation_degrees")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 30.0, 0.0, -30.0, 0.0 ]
+}
 
 [node name="PlayerHP" type="Control"]
 anchor_right = 1.0
@@ -100,6 +148,16 @@ texture = ExtResource( 2 )
 
 [node name="Heart3" type="Sprite" parent="."]
 position = Vector2( 142, 28 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="Heart4" type="Sprite" parent="."]
+position = Vector2( 199, 28 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="Heart5" type="Sprite" parent="."]
+position = Vector2( 256, 28 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 

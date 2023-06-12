@@ -16,7 +16,7 @@ func _ready():
 func _process(_delta):
 	if (Input.is_action_just_pressed("ui_end")):
 		get_tree().quit()
-	if (Input.is_action_just_pressed("ui_accept")) && not introdone:
+	if (Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("action_fire")) && not introdone:
 		$AnimationPlayer.play("CamSpin")
 		introdone = true
 		$UI.visible = true

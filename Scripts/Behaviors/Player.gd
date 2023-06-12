@@ -5,7 +5,7 @@ extends KinematicBody2D
 signal player_died
 signal player_hurt
 
-var HP = 3
+var HP = 5
 var movespeed=200
 var bulletspeed=1000
 var bullet=preload("res://Assets/Prefabs/Player/Bullet.tscn")

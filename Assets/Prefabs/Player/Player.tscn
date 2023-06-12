@@ -7,7 +7,6 @@
 [ext_resource path="res://Assets/Textures/Player/gacha_protag_back.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Prefabs/UIs/UI Scenes/HP.tscn" type="PackedScene" id=6]
 
-
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 10, 4.5 )
 

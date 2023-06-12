@@ -11,7 +11,7 @@ var damage = preload("res://Assets/Textures/UI/Game/heartbroke.png")
 func _ready():
 	pass # Replace with function body.
 
-var currHP = 3
+var currHP = 5
 
 func updateHP(newVal):
 	match newVal:
@@ -19,12 +19,29 @@ func updateHP(newVal):
 			$Heart.texture = healthy
 			$Heart2.texture = damage
 			$Heart3.texture = damage
+			$Heart4.texture = damage
+			$Heart5.texture = damage
 		2:
 			$Heart.texture = healthy
 			$Heart2.texture = healthy
 			$Heart3.texture = damage
+			$Heart4.texture = damage
+			$Heart5.texture = damage
 		3:
-			
 			$Heart.texture = healthy
 			$Heart2.texture = healthy
 			$Heart3.texture = healthy
+			$Heart4.texture = damage
+			$Heart5.texture = damage
+		4:
+			$Heart.texture = healthy
+			$Heart2.texture = healthy
+			$Heart3.texture = healthy
+			$Heart4.texture = healthy
+			$Heart5.texture = damage
+		5:
+			$Heart.texture = healthy
+			$Heart2.texture = healthy
+			$Heart3.texture = healthy
+			$Heart4.texture = healthy
+			$Heart5.texture = healthy
